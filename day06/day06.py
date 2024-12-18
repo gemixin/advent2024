@@ -6,7 +6,7 @@ Gemma McLean
 '''
 
 # Read in the input file as a list of strings, while looking for starting_pos
-with open('day6/input.txt') as file_object:
+with open('day06/input.txt') as file_object:
     grid = []
     for i, line in enumerate(file_object):
         # Add each line as a string to the grid

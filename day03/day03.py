@@ -8,7 +8,7 @@ Gemma McLean
 from re import findall
 
 # Read in the input file as a single string
-with open('day3/input.txt') as file_object:
+with open('day03/input.txt') as file_object:
     mem_string = file_object.read()
 
 # Use regex to match mul(123,123) where 123 is any 1-3 digit number

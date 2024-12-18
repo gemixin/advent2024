@@ -6,7 +6,7 @@ Gemma McLean
 '''
 
 # Read in the input file as two lists of ints
-with open('day1/input.txt') as file_object:
+with open('day01/input.txt') as file_object:
     list1, list2 = [], []
     for line in file_object:
         list1.append(int(line.split('   ')[0]))

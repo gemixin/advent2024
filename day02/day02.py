@@ -6,7 +6,7 @@ Gemma McLean
 '''
 
 # Read in the input file as a list of lists of ints
-with open('day2/input.txt') as file_object:
+with open('day02/input.txt') as file_object:
     reports = [list(map(int, line.split(' '))) for line in file_object]
 
 

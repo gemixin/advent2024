@@ -6,7 +6,7 @@ Gemma McLean
 '''
 
 # Read in the input file as a single string
-with open('day9/input.txt') as file_object:
+with open('day09/input.txt') as file_object:
     input_string = file_object.read()
 
 # Reformat the string

@@ -6,7 +6,7 @@ Gemma McLean
 '''
 
 # Read in the input file as a list of strings
-with open('day4/input.txt') as file_object:
+with open('day04/input.txt') as file_object:
     grid = [line.rstrip('\n') for line in file_object]
 
 # Set some variables

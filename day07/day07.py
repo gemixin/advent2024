@@ -6,7 +6,7 @@ Gemma McLean
 '''
 
 # Read in the input file as a list of tuples in the form (target_num, [operands])
-with open('day7/input.txt') as file_object:
+with open('day07/input.txt') as file_object:
     calibrations = []
     for line in file_object:
         # Get the target number as an int

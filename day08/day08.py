@@ -8,7 +8,7 @@ Gemma McLean
 import numpy as np
 
 # Read in the input file as a dictionary of antenna positions
-with open('day8/input.txt') as file_object:
+with open('day08/input.txt') as file_object:
     # Empty dictionary for antennas
     antennas = {}
     for i, line in enumerate(file_object):

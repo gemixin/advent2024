@@ -14,7 +14,7 @@ updates = []
 section = 1
 
 # Read in the input file in two separate sections
-with open('day5/input.txt') as file_object:
+with open('day05/input.txt') as file_object:
     for line in file_object:
         # If the line is blank, switch to section 2
         if line == '\n':
