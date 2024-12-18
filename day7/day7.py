@@ -29,7 +29,7 @@ def dfs_calibration(target, operands, include_concat=False):
     if not operands:
         return False
 
-    # Initialize the stack for DFS with the first operand as the initial result
+    # Initialise the stack for DFS with the first operand as the initial result
     stack = [(operands[0], 1)]
 
     # While the stack isn't empty

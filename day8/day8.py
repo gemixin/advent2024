@@ -11,8 +11,6 @@ import numpy as np
 with open('day8/input.txt') as file_object:
     # Empty dictionary for antennas
     antennas = {}
-    # Initialise row and column counters
-    i, j = 0, 0
     for i, line in enumerate(file_object):
         for j, char in enumerate(line.rstrip('\n')):
             # If it's an antenna (frequency = char)
