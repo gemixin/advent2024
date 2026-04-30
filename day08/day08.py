@@ -1,20 +1,20 @@
-'''
+"""
 Advent of Code 2024
 Day Eight
 https://adventofcode.com/2024/day/8
 Gemma McLean
-'''
+"""
 
 import numpy as np
 
 # Read in the input file as a dictionary of antenna positions
-with open('day08/input.txt') as file_object:
+with open("day08/input.txt") as file_object:
     # Empty dictionary for antennas
     antennas = {}
     for i, line in enumerate(file_object):
-        for j, char in enumerate(line.rstrip('\n')):
+        for j, char in enumerate(line.rstrip("\n")):
             # If it's an antenna (frequency = char)
-            if char != '.':
+            if char != ".":
                 # If the frequency is not already in the dictionary
                 if char not in antennas.keys():
                     # Create the key and create a list with first position
@@ -25,7 +25,7 @@ with open('day08/input.txt') as file_object:
                     antennas[char].append(np.array([i, j]))
 
 # Store grid size for checking later
-grid_size = np.array([i+1, j+1])
+grid_size = np.array([i + 1, j + 1])
 
 # An empty set for antinode positions
 antinodes = set()
@@ -34,7 +34,7 @@ for freq in antennas.keys():
     # Get the list of antenna positions for that frequency
     positions = antennas[freq]
     # Create a list of all pairs of antenna positions in the form ((x,y), (x,y))
-    pairs = [(a, b) for i, a in enumerate(positions) for b in positions[i + 1:]]
+    pairs = [(a, b) for i, a in enumerate(positions) for b in positions[i + 1 :]]
     # For each pair of positions
     for pair in pairs:
         # Get vector difference
@@ -61,7 +61,7 @@ for freq in antennas.keys():
     # Add all antennas for this frequency to the antinodes set
     antinodes.update([tuple(pos) for pos in positions])
     # Create a list of all pairs of antenna positions in the form ((x,y), (x,y))
-    pairs = [(a, b) for i, a in enumerate(positions) for b in positions[i + 1:]]
+    pairs = [(a, b) for i, a in enumerate(positions) for b in positions[i + 1 :]]
     # For each pair of positions
     for pair in pairs:
         # Get vector difference

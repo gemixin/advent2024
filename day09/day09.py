@@ -1,12 +1,12 @@
-'''
+"""
 Advent of Code 2024
 Day Nine
 https://adventofcode.com/2024/day/9
 Gemma McLean
-'''
+"""
 
 # Read in the input file as a single string
-with open('day09/input.txt') as file_object:
+with open("day09/input.txt") as file_object:
     input_string = file_object.read()
 
 # Reformat the string
@@ -34,7 +34,7 @@ for i in range(len(input_string)):
         free_space[space_start_idx] = 0
         free_space_count = 0
         for j in range(int(input_string[i])):
-            reformatted_string.append('.')
+            reformatted_string.append(".")
             # Increase length of free space for every dot added
             free_space_count += 1
         free_space[space_start_idx] = (free_space_count, 0)
@@ -45,26 +45,26 @@ output = reformatted_string.copy()
 # Pointer for start of list
 j = 0
 # Loop through each character in the list backwards, from the end
-for i in range(len(output)-1, -1, -1):
+for i in range(len(output) - 1, -1, -1):
     # Don't overlap i and j
     if i - 1 <= j:
         break
     # Ignore free space
-    if output[i] != '.':
+    if output[i] != ".":
         # Increment j until it reaches the next free block
-        while output[j] != '.':
+        while output[j] != ".":
             j += 1
         # Insert the number at i in to position j and '.' at position i
         output[j] = output[i]
-        output[i] = '.'
+        output[i] = "."
 
 
 def calculate_checksum(output_list):
-    ''' Calculate checksum by multiplying index by num and summing. '''
+    """Calculate checksum by multiplying index by num and summing."""
     checksum = 0
     for i, num in enumerate(output_list):
         # Skip free space
-        if (num != '.'):
+        if num != ".":
             checksum += i * num
     return checksum
 
@@ -91,10 +91,11 @@ for file_key in reversed(files):
         if free_space[free_key][0] >= num_blocks:
             # Replace the free space with the file
             offset = free_space[free_key][1]
-            output[free_key + offset:free_key + offset +
-                   num_blocks] = output[start_idx:end_idx]
+            output[free_key + offset : free_key + offset + num_blocks] = output[
+                start_idx:end_idx
+            ]
             # Replace the file with free space
-            output[start_idx:end_idx] = ['.' for _ in range(start_idx, end_idx)]
+            output[start_idx:end_idx] = ["." for _ in range(start_idx, end_idx)]
             # Calculate number of free blocks leftover
             remaining_blocks = free_space[free_key][0] - num_blocks
             # If they've all been used, delete from dictionary

@@ -1,30 +1,30 @@
-'''
+"""
 Advent of Code 2024
 Day Seven
 https://adventofcode.com/2024/day/7
 Gemma McLean
-'''
+"""
 
 # Read in the input file as a list of tuples in the form (target_num, [operands])
-with open('day07/input.txt') as file_object:
+with open("day07/input.txt") as file_object:
     calibrations = []
     for line in file_object:
         # Get the target number as an int
-        num = int(line.split(':')[0])
+        num = int(line.split(":")[0])
         # Get the operands as a list of ints
-        operands = list(map(int, line.split(':')[1].split(' ')[1:]))
+        operands = list(map(int, line.split(":")[1].split(" ")[1:]))
         # Add as a tuple to the list
         calibrations.append((num, operands))
 
 
 def dfs_calibration(target, operands, include_concat=False):
-    '''
+    """
     Perform a depth-first search on the calibrations.
     Returns True if the operands can form the target and False if not.
     Set include_concat to True to include concatenation as a possible operator.
     Each stack entry is (current_result, index)
     Index = index of the next operand we need to consider
-    '''
+    """
     # If there are no operands, return False
     if not operands:
         return False

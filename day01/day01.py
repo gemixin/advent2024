@@ -1,16 +1,16 @@
-'''
+"""
 Advent of Code 2024
 Day One
 https://adventofcode.com/2024/day/1
 Gemma McLean
-'''
+"""
 
 # Read in the input file as two lists of ints
-with open('day01/input.txt') as file_object:
+with open("day01/input.txt") as file_object:
     list1, list2 = [], []
     for line in file_object:
-        list1.append(int(line.split('   ')[0]))
-        list2.append(int(line.split('   ')[1]))
+        list1.append(int(line.split("   ")[0]))
+        list2.append(int(line.split("   ")[1]))
 
 # Sort the lists
 sorted_list1 = sorted(list1)
